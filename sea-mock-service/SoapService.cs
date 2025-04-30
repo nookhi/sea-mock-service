@@ -1,5 +1,6 @@
 using System;
 using System.ServiceModel;
+using System.Runtime.Serialization;
 
 [ServiceContract(Namespace = "http://ws.ustorage.idmt.ru")]
 public interface IDocumentServicePort
@@ -9,32 +10,34 @@ public interface IDocumentServicePort
 
     [OperationContract]
     getVersionsResponse getVersions(getVersions request);
-    
-    // Добавь остальные методы по аналогии при необходимости
 }
 
 [DataContract(Namespace = "http://ws.ustorage.idmt.ru")]
 public class getDocument
 {
-    [DataMember] public string documentId { get; set; }
+    [DataMember]
+    public string documentId { get; set; }
 }
 
 [DataContract(Namespace = "http://ws.ustorage.idmt.ru")]
 public class getDocumentResponse
 {
-    [DataMember] public string result { get; set; } = "Mocked Document Content";
+    [DataMember]
+    public string result { get; set; } = "Mocked Document Content";
 }
 
 [DataContract(Namespace = "http://rt.fs.documentum.emc.com/")]
 public class getVersions
 {
-    [DataMember] public string documentId { get; set; }
+    [DataMember]
+    public string documentId { get; set; }
 }
 
 [DataContract(Namespace = "http://rt.fs.documentum.emc.com/")]
 public class getVersionsResponse
 {
-    [DataMember] public string[] versions { get; set; } = new[] { "v1", "v2" };
+    [DataMember]
+    public string[] versions { get; set; } = new[] { "v1", "v2" };
 }
 
 public class DocumentService : IDocumentServicePort
