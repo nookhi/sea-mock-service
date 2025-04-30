@@ -1,0 +1,410 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.ustorage.idmt.ru" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DocumentService" targetNamespace="http://ws.ustorage.idmt.ru">
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://ws.ustorage.idmt.ru" schemaLocation="schema1.xml"/>
+        </xsd:schema>
+        <xsd:schema>
+            <xsd:import namespace="http://rt.fs.documentum.emc.com/" schemaLocation="schema2.xml"/>
+        </xsd:schema>
+        <xsd:schema>
+            <xsd:import namespace="http://data.ws.ustorage.idmt.ru" schemaLocation="schema3.xml"/>
+        </xsd:schema>
+        <xsd:schema>
+            <xsd:import namespace="http://content.core.datamodel.fs.documentum.emc.com/" schemaLocation="schema4.xml"/>
+        </xsd:schema>
+    </types>
+    <message name="getContent">
+        <part element="tns:getContent" name="parameters"/>
+    </message>
+    <message name="getContentResponse">
+        <part element="tns:getContentResponse" name="parameters"/>
+    </message>
+    <message name="Exception">
+        <part element="tns:Exception" name="fault"/>
+    </message>
+    <message name="ServiceException">
+        <part xmlns:ns1="http://rt.fs.documentum.emc.com/" element="ns1:ServiceException" name="fault"/>
+    </message>
+    <message name="getVersions">
+        <part element="tns:getVersions" name="parameters"/>
+    </message>
+    <message name="getVersionsResponse">
+        <part element="tns:getVersionsResponse" name="parameters"/>
+    </message>
+    <message name="getDocument">
+        <part element="tns:getDocument" name="parameters"/>
+    </message>
+    <message name="getDocumentResponse">
+        <part element="tns:getDocumentResponse" name="parameters"/>
+    </message>
+    <message name="createDocument">
+        <part element="tns:createDocument" name="parameters"/>
+    </message>
+    <message name="createDocumentResponse">
+        <part element="tns:createDocumentResponse" name="parameters"/>
+    </message>
+    <message name="setContent">
+        <part element="tns:setContent" name="parameters"/>
+    </message>
+    <message name="setContentResponse">
+        <part element="tns:setContentResponse" name="parameters"/>
+    </message>
+    <message name="getDocumentVersion">
+        <part element="tns:getDocumentVersion" name="parameters"/>
+    </message>
+    <message name="getDocumentVersionResponse">
+        <part element="tns:getDocumentVersionResponse" name="parameters"/>
+    </message>
+    <message name="getFirstDocumentFound">
+        <part element="tns:getFirstDocumentFound" name="parameters"/>
+    </message>
+    <message name="getFirstDocumentFoundResponse">
+        <part element="tns:getFirstDocumentFoundResponse" name="parameters"/>
+    </message>
+    <message name="updateDocument">
+        <part element="tns:updateDocument" name="parameters"/>
+    </message>
+    <message name="updateDocumentResponse">
+        <part element="tns:updateDocumentResponse" name="parameters"/>
+    </message>
+    <message name="updateDocumentOnly">
+        <part element="tns:updateDocumentOnly" name="parameters"/>
+    </message>
+    <message name="updateDocumentOnlyResponse">
+        <part element="tns:updateDocumentOnlyResponse" name="parameters"/>
+    </message>
+    <message name="deleteDocument">
+        <part element="tns:deleteDocument" name="parameters"/>
+    </message>
+    <message name="deleteDocumentResponse">
+        <part element="tns:deleteDocumentResponse" name="parameters"/>
+    </message>
+    <message name="deleteAllDocumentVersions">
+        <part element="tns:deleteAllDocumentVersions" name="parameters"/>
+    </message>
+    <message name="deleteAllDocumentVersionsResponse">
+        <part element="tns:deleteAllDocumentVersionsResponse" name="parameters"/>
+    </message>
+    <message name="getContentVersion">
+        <part element="tns:getContentVersion" name="parameters"/>
+    </message>
+    <message name="getContentVersionResponse">
+        <part element="tns:getContentVersionResponse" name="parameters"/>
+    </message>
+    <message name="setContentFromUrl">
+        <part element="tns:setContentFromUrl" name="parameters"/>
+    </message>
+    <message name="setContentFromUrlResponse">
+        <part element="tns:setContentFromUrlResponse" name="parameters"/>
+    </message>
+    <message name="addReadPermit">
+        <part element="tns:addReadPermit" name="parameters"/>
+    </message>
+    <message name="addReadPermitResponse">
+        <part element="tns:addReadPermitResponse" name="parameters"/>
+    </message>
+    <portType name="DocumentServicePort">
+        <operation name="getContent">
+            <input message="tns:getContent"/>
+            <output message="tns:getContentResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:ServiceException" name="ServiceException"/>
+        </operation>
+        <operation name="getVersions">
+            <input message="tns:getVersions"/>
+            <output message="tns:getVersionsResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:ServiceException" name="ServiceException"/>
+        </operation>
+        <operation name="getDocument">
+            <input message="tns:getDocument"/>
+            <output message="tns:getDocumentResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:ServiceException" name="ServiceException"/>
+        </operation>
+        <operation name="createDocument">
+            <input message="tns:createDocument"/>
+            <output message="tns:createDocumentResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:ServiceException" name="ServiceException"/>
+        </operation>
+        <operation name="setContent">
+            <input message="tns:setContent"/>
+            <output message="tns:setContentResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:ServiceException" name="ServiceException"/>
+        </operation>
+        <operation name="getDocumentVersion">
+            <input message="tns:getDocumentVersion"/>
+            <output message="tns:getDocumentVersionResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:ServiceException" name="ServiceException"/>
+        </operation>
+        <operation name="getFirstDocumentFound">
+            <input message="tns:getFirstDocumentFound"/>
+            <output message="tns:getFirstDocumentFoundResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:ServiceException" name="ServiceException"/>
+        </operation>
+        <operation name="updateDocument">
+            <input message="tns:updateDocument"/>
+            <output message="tns:updateDocumentResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:ServiceException" name="ServiceException"/>
+        </operation>
+        <operation name="updateDocumentOnly">
+            <input message="tns:updateDocumentOnly"/>
+            <output message="tns:updateDocumentOnlyResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:ServiceException" name="ServiceException"/>
+        </operation>
+        <operation name="deleteDocument">
+            <input message="tns:deleteDocument"/>
+            <output message="tns:deleteDocumentResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:ServiceException" name="ServiceException"/>
+        </operation>
+        <operation name="deleteAllDocumentVersions">
+            <input message="tns:deleteAllDocumentVersions"/>
+            <output message="tns:deleteAllDocumentVersionsResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:ServiceException" name="ServiceException"/>
+        </operation>
+        <operation name="getContentVersion">
+            <input message="tns:getContentVersion"/>
+            <output message="tns:getContentVersionResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:ServiceException" name="ServiceException"/>
+        </operation>
+        <operation name="setContentFromUrl">
+            <input message="tns:setContentFromUrl"/>
+            <output message="tns:setContentFromUrlResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:ServiceException" name="ServiceException"/>
+        </operation>
+        <operation name="addReadPermit">
+            <input message="tns:addReadPermit"/>
+            <output message="tns:addReadPermitResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+            <fault message="tns:ServiceException" name="ServiceException"/>
+        </operation>
+    </portType>
+    <binding name="DocumentServicePortBinding" type="tns:DocumentServicePort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="getContent">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getVersions">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getDocument">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="createDocument">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="setContent">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getDocumentVersion">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getFirstDocumentFound">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateDocument">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateDocumentOnly">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteDocument">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteAllDocumentVersions">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getContentVersion">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="setContentFromUrl">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="addReadPermit">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+            <fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="DocumentService">
+        <port binding="tns:DocumentServicePortBinding" name="DocumentServicePort">
+            <soap:address location="http://igcm.fsk-ees.ru:80/services/ws/DocumentService"/>
+        </port>
+    </service>
+</definitions>

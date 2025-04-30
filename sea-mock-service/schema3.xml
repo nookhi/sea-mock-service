@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. -->
+<xs:schema xmlns:ns2="http://content.core.datamodel.fs.documentum.emc.com/" xmlns:ns1="http://ws.ustorage.idmt.ru" xmlns:tns="http://data.ws.ustorage.idmt.ru" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://data.ws.ustorage.idmt.ru">
+
+  <xs:import namespace="http://ws.ustorage.idmt.ru" schemaLocation="schema1.xml"/>
+
+  <xs:import namespace="http://content.core.datamodel.fs.documentum.emc.com/" schemaLocation="schema4.xml"/>
+
+  <xs:complexType name="Document">
+    <xs:complexContent>
+      <xs:extension base="tns:SysObject">
+        <xs:sequence>
+          <xs:element name="creatorName" type="xs:string" minOccurs="0"/>
+          <xs:element name="sourceSystemCodes" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="balanceUnitCode" type="xs:string" minOccurs="0"/>
+          <xs:element name="electronicSignature" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="extAttrValues" type="tns:AttributeValue" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SysObject">
+    <xs:complexContent>
+      <xs:extension base="tns:TypedObject">
+        <xs:sequence>
+          <xs:element name="chronicleId" type="xs:string" minOccurs="0"/>
+          <xs:element name="objectName" type="xs:string" minOccurs="0"/>
+          <xs:element name="title" type="xs:string" minOccurs="0"/>
+          <xs:element name="creationDate" type="xs:dateTime" minOccurs="0"/>
+          <xs:element name="objectType" type="xs:string" minOccurs="0"/>
+          <xs:element name="contentSize" type="xs:int" minOccurs="0"/>
+          <xs:element name="contentType" type="xs:string" minOccurs="0"/>
+          <xs:element name="modifyDate" type="xs:dateTime" minOccurs="0"/>
+          <xs:element name="modifier" type="xs:string" minOccurs="0"/>
+          <xs:element name="versionLabels" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="pageCnt" type="xs:int" minOccurs="0"/>
+          <xs:element name="lockOwner" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TypedObject">
+    <xs:sequence>
+      <xs:element name="objectId" type="xs:string" minOccurs="0"/>
+      <xs:element name="vStamp" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AttributeValue">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="values" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DmrContent">
+    <xs:complexContent>
+      <xs:extension base="tns:TypedObject">
+        <xs:sequence>
+          <xs:element name="content" type="ns2:Content" minOccurs="0"/>
+          <xs:element name="dosExtension" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>
