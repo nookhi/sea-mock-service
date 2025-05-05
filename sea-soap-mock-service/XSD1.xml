@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. -->
+<xs:schema xmlns:ns1="http://data.ws.ustorage.idmt.ru" xmlns:tns="http://ws.ustorage.idmt.ru" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.ustorage.idmt.ru">
+
+  <xs:import namespace="http://data.ws.ustorage.idmt.ru" schemaLocation="http://igcm.fsk-ees.ru:80/services/ws/DocumentService?xsd=3"/>
+
+  <xs:element name="AttributeValue" type="ns1:AttributeValue"/>
+
+  <xs:element name="DmrContent" type="ns1:DmrContent"/>
+
+  <xs:element name="Document" type="ns1:Document"/>
+
+  <xs:element name="Exception" type="tns:Exception"/>
+
+  <xs:element name="SysObject" type="ns1:SysObject"/>
+
+  <xs:element name="TypedObject" type="ns1:TypedObject"/>
+
+  <xs:element name="addReadPermit" type="tns:addReadPermit"/>
+
+  <xs:element name="addReadPermitResponse" type="tns:addReadPermitResponse"/>
+
+  <xs:element name="createDocument" type="tns:createDocument"/>
+
+  <xs:element name="createDocumentResponse" type="tns:createDocumentResponse"/>
+
+  <xs:element name="deleteAllDocumentVersions" type="tns:deleteAllDocumentVersions"/>
+
+  <xs:element name="deleteAllDocumentVersionsResponse" type="tns:deleteAllDocumentVersionsResponse"/>
+
+  <xs:element name="deleteDocument" type="tns:deleteDocument"/>
+
+  <xs:element name="deleteDocumentResponse" type="tns:deleteDocumentResponse"/>
+
+  <xs:element name="getContent" type="tns:getContent"/>
+
+  <xs:element name="getContentResponse" type="tns:getContentResponse"/>
+
+  <xs:element name="getContentVersion" type="tns:getContentVersion"/>
+
+  <xs:element name="getContentVersionResponse" type="tns:getContentVersionResponse"/>
+
+  <xs:element name="getDocument" type="tns:getDocument"/>
+
+  <xs:element name="getDocumentResponse" type="tns:getDocumentResponse"/>
+
+  <xs:element name="getDocumentVersion" type="tns:getDocumentVersion"/>
+
+  <xs:element name="getDocumentVersionResponse" type="tns:getDocumentVersionResponse"/>
+
+  <xs:element name="getFirstDocumentFound" type="tns:getFirstDocumentFound"/>
+
+  <xs:element name="getFirstDocumentFoundResponse" type="tns:getFirstDocumentFoundResponse"/>
+
+  <xs:element name="getVersions" type="tns:getVersions"/>
+
+  <xs:element name="getVersionsResponse" type="tns:getVersionsResponse"/>
+
+  <xs:element name="setContent" type="tns:setContent"/>
+
+  <xs:element name="setContentFromUrl" type="tns:setContentFromUrl"/>
+
+  <xs:element name="setContentFromUrlResponse" type="tns:setContentFromUrlResponse"/>
+
+  <xs:element name="setContentResponse" type="tns:setContentResponse"/>
+
+  <xs:element name="updateDocument" type="tns:updateDocument"/>
+
+  <xs:element name="updateDocumentOnly" type="tns:updateDocumentOnly"/>
+
+  <xs:element name="updateDocumentOnlyResponse" type="tns:updateDocumentOnlyResponse"/>
+
+  <xs:element name="updateDocumentResponse" type="tns:updateDocumentResponse"/>
+
+  <xs:complexType name="getFirstDocumentFound">
+    <xs:sequence>
+      <xs:element name="searchClause" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getFirstDocumentFoundResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Document" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+
+
+
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getVersions">
+    <xs:sequence>
+      <xs:element name="objectId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getVersionsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Document" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getContent">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getContentResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:DmrContent" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="deleteDocument">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteDocumentResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="setContent">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+      <xs:element name="content" type="ns1:DmrContent" minOccurs="0"/>
+      <xs:element name="createVersion" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="setContentResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDocument">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDocumentResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Document" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createDocument">
+    <xs:sequence>
+      <xs:element name="document" type="ns1:Document" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createDocumentResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Document" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateDocument">
+    <xs:sequence>
+      <xs:element name="document" type="ns1:Document" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateDocumentResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="addReadPermit">
+    <xs:sequence>
+      <xs:element name="objectId" type="xs:string" minOccurs="0"/>
+      <xs:element name="relatedLoginName" type="xs:string" minOccurs="0"/>
+      <xs:element name="relatedRepository" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addReadPermitResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getDocumentVersion">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDocumentVersionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:Document" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="setContentFromUrl">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+      <xs:element name="contentUrl" type="xs:string" minOccurs="0"/>
+      <xs:element name="createVersion" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="setContentFromUrlResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateDocumentOnly">
+    <xs:sequence>
+      <xs:element name="document" type="ns1:Document" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateDocumentOnlyResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="deleteAllDocumentVersions">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteAllDocumentVersionsResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getContentVersion">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getContentVersionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="ns1:DmrContent" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
